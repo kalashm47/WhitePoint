@@ -7,7 +7,7 @@
 - [x] Ground detection
 - [x] Sprite flip
 - [ ] Dash
-- [ ] Wall jump
+- [x] Wall jump
 - [ ] Wall slide
 - [x] Air attack
 - [ ] Invincibility frames (I-Frames)
