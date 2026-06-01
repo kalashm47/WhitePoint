@@ -60,7 +60,7 @@ public class PlayerMovement : MonoBehaviour
         public Vector2 Move;
     }
 
-    void Start()
+    private void Awake()
     {
         anim = GetComponentInChildren<Animator>();
         PlayerRb = GetComponent<Rigidbody2D>();
@@ -71,7 +71,7 @@ public class PlayerMovement : MonoBehaviour
             Debug.LogError("[PlayerMovement] PlayerStats not assigned!");
         }
 
-        currentSpeed = walkSpeed; // Initialize with walk speed
+        currentSpeed = walkSpeed; // Initialize with walk speed  
     }
 
     private void Update()
