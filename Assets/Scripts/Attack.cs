@@ -88,48 +88,58 @@ public class Attack : MonoBehaviour
 
     private void Awake()
     {
-        // Register attack data
+        if (animator == null)
+            animator = GetComponent<Animator>();
+
+        if (spriteRenderer == null)
+            spriteRenderer = GetComponent<SpriteRenderer>();
+
+        if (attackPoint == null)
+            Debug.LogError("AttackPoint não foi atribuído!");
+
+        if (hitbox == null)
+            Debug.LogError("Hitbox não foi atribuída!");
+        else
+            hitbox.SetActive(false);
+
         attacks = new Dictionary<Direction, AttackData>()
+    {
         {
+            Direction.Up,
+            new AttackData()
             {
-                Direction.Up,
-                new AttackData()
-                {
-                    animation = "attack",
-                    hitboxOffset = new Vector2(0, 1)
-                }
-            },
-
-            {
-                Direction.Down,
-                new AttackData()
-                {
-                    animation = "attack",
-                    hitboxOffset = new Vector2(0, -1)
-                }
-            },
-
-            {
-                Direction.Left,
-                new AttackData()
-                {
-                    animation = "attack",
-                    hitboxOffset = new Vector2(-1, 0)
-                }
-            },
-
-            {
-                Direction.Right,
-                new AttackData()
-                {
-                    animation = "attack",
-                    hitboxOffset = new Vector2(1, 0)
-                }
+                animation = "attack",
+                hitboxOffset = new Vector2(0, 1)
             }
-        };
+        },
 
-        // Safety check
-        hitbox.SetActive(false);
+        {
+            Direction.Down,
+            new AttackData()
+            {
+                animation = "attack",
+                hitboxOffset = new Vector2(0, -1)
+            }
+        },
+
+        {
+            Direction.Left,
+            new AttackData()
+            {
+                animation = "attack",
+                hitboxOffset = new Vector2(-1, 0)
+            }
+        },
+
+        {
+            Direction.Right,
+            new AttackData()
+            {
+                animation = "attack",
+                hitboxOffset = new Vector2(1, 0)
+            }
+        }
+    };
     }
 
     // Public coroutine so other scripts can call it
