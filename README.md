@@ -6,11 +6,10 @@
 - [x] Rigidbody2D physics
 - [x] Ground detection
 - [x] Sprite flip
-- [ ] Double jump (optional)
 - [ ] Dash
 - [ ] Wall jump
 - [ ] Wall slide
-- [ ] Air attack
+- [x] Air attack
 - [ ] Invincibility frames (I-Frames)
 
 ---
